@@ -1,15 +1,12 @@
 ---
 layout: page
-title: About
+title: Информация о блоге
 permalink: /about/
 ---
 
-Some information about you!
+Занимаюсь созданием своего контента в рамках данного блога.
 
-### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+### Напишите мне
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+[evolutionsup@gmail.com](mailto:evolutionsup@gmail.com)
