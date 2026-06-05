@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>sh#rp · ascii terminal</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #191724;   /* rose-pine base */
+            color: #ebbcba;              /* rose-pine text */
+            font-family: 'IBM Plex Mono', 'SF Mono', 'Fira Code', monospace;
+            font-size: 150%;
+            line-height: 1.2;
+            padding: 2rem;
+            margin: 0;
+        }
+
+        /* ASCII container – preserves whitespace, handles overflow gracefully */
+        .ascii-container {
+            display: inline-block;
+            white-space: pre;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: clamp(0.7rem, 2.2vw, 1.5rem);
+            line-height: 1.2;
+            text-align: left;
+            background: transparent;
+            border-radius: 0;
+            letter-spacing: normal;
+            word-break: keep-all;
+            overflow-x: auto;
+            max-width: 100%;
+            /* subtle glow for better readability on dark bg */
+            text-shadow: 0 0 2px rgba(235, 188, 186, 0.2);
+        }
+
+        /* optional scroll hint for narrow screens */
+        .ascii-container::-webkit-scrollbar {
+            height: 6px;
+            background: #2a273f;
+        }
+        .ascii-container::-webkit-scrollbar-thumb {
+            background: #6e6a86;
+            border-radius: 8px;
+        }
+
+        /* keep everything centered and responsive */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        /* preserve link style if needed */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* optional subtle cursor blink effect (just for fun) */
+        @keyframes softPulse {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        .ascii-container:hover {
+            animation: softPulse 0.8s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ascii-container">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡀⢀⠀⢀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢧⢳⣾⣂⣾⡁⣴⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠓⣬⠾⠋⠉⢸⣷⣋⣤⡦
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢯⡞⠃⠀⠀⠀⡼⠊⣠⡏⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣶⣄⣀⣀⡴⣡⡴⠃⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⣽⠧⢴⡀⢸⡛⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡿⠻⠛⠋⠉⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⡇⢸⠉⠀⠀⠹⣼⣽⡚⠉⠹⡄⠀⠀⠀⠀⠀⠀⠀⠀⡴⠛⠙⢳⡀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡘⢿⣆⠀⠀⠀⣿⠉⠀⠀⢀⣧⠀⢀⣤⠤⢤⣄⠀⢸⠉⠀⠀⠈⣧⢸⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠾⠉⠙⠻⢗⠀⣦⣏⣤⠀⣠⠞⠀⠀⣞⠋⠀⠀⠈⠻⡼⡀⣄⡀⢀⡯⠟⠧⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢯⣀⠀⠀⠲⣷⡿⣿⠋⠉⠁⠀⠀⠀⠹⣄⠀⠀⣠⣤⠘⠧⣽⣨⣞⡁⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠁⠀⢸⣷⠀⠀⠀⠀⠀⠀⠈⣓⣦⣜⠉⣿⣶⠧⣟⣙⣀⣀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⡞⠉⠀⠾⠞⡵⢜⣇⡀⠙⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠤⠤⣄⠀⣼⣿⡠⠴⠶⠦⣄⠀⣷⣀⠀⢀⣠⡷⡀⠉⠁⠀⢸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡋⠀⠀⠀⠈⢷⣿⠋⠀⠀⠀⠀⢸⡆⠀⠈⠉⣩⣿⠣⠙⠲⠤⠶⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⡇⣠⣴⣾⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣄⠀⠀⠀⢠⣦⣌⡄⢠⣦⠀⠀⣾⠹⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠤⠙⠢⢄⡀⠀⢳⡄⢃⡼⠉⣀⠜⠋⠉⠒⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⡯⠀⠀⠀⠀⠀⣠⡉⠙⣹⣿⠶⣮⣁⡀⠀⠀⠀⠀⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⠀⠀⠀⠘⠛⠓⣛⠇⢸⡷⡀⠻⠟⠀⠀⠀⠀⢸⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣹⠒⠶⢶⠒⠉⠀⠀⠈⠉⢫⠳⢄⣀⣀⣀⡤⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⡾⠋⠀⠀⢰⠀⠀⠀⠀⠀⠀⢸⣇⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⣴⣾⠿⠛⠁⠀⠀⠀⠀⠈⠳⣄⣀⣀⣀⡤⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣴⣿⡿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣾⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢸⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⢧⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </div>
+    </div>
+</body>
+</html>
