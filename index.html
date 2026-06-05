@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>sh#rp · ascii terminal</title>
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
@@ -15,75 +15,71 @@
 
         body {
             min-height: 100vh;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #191724;   /* rose-pine base */
             color: #ebbcba;              /* rose-pine text */
-            font-family: 'IBM Plex Mono', 'SF Mono', 'Fira Code', monospace;
-            font-size: 150%;
-            line-height: 1.2;
-            padding: 2rem;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
             margin: 0;
+            padding: 0;
+            overflow-x: auto;
         }
 
-        /* ASCII container – preserves whitespace, handles overflow gracefully */
+        /* ASCII container - NO borders, NO vertical lines, just pure art */
         .ascii-container {
             display: inline-block;
             white-space: pre;
             font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            font-size: clamp(0.7rem, 2.2vw, 1.5rem);
-            line-height: 1.2;
+            font-size: clamp(0.65rem, 2vw, 1.3rem);
+            line-height: 1.15;
             text-align: left;
             background: transparent;
-            border-radius: 0;
             letter-spacing: normal;
             word-break: keep-all;
-            overflow-x: auto;
-            max-width: 100%;
-            /* subtle glow for better readability on dark bg */
-            text-shadow: 0 0 2px rgba(235, 188, 186, 0.2);
+            /* remove any potential outlines or borders */
+            outline: none;
+            border: none;
+            box-shadow: none;
+            /* smooth rendering */
+            font-smooth: never;
+            -webkit-font-smoothing: none;
         }
 
-        /* optional scroll hint for narrow screens */
-        .ascii-container::-webkit-scrollbar {
-            height: 6px;
-            background: #2a273f;
-        }
-        .ascii-container::-webkit-scrollbar-thumb {
-            background: #6e6a86;
-            border-radius: 8px;
-        }
-
-        /* keep everything centered and responsive */
+        /* remove any wrapper lines, borders, or containers */
         .wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            overflow-x: auto;
+            padding: 1rem;
+            border: none;
+            outline: none;
         }
 
-        /* preserve link style if needed */
-        a {
-            color: inherit;
+        /* no decoration on any element */
+        a, div, body, .wrapper, .ascii-container {
+            border: none;
+            outline: none;
             text-decoration: none;
         }
 
-        /* optional subtle cursor blink effect (just for fun) */
-        @keyframes softPulse {
-            0% { opacity: 0.6; }
-            100% { opacity: 1; }
+        /* optional scroll for readability if ascii overflows horizontally */
+        body {
+            overflow-x: auto;
+            overflow-y: auto;
         }
-        .ascii-container:hover {
-            animation: softPulse 0.8s ease-in-out;
+
+        /* keep ascii art fully visible, no cropping */
+        .ascii-container br {
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="ascii-container">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡀⢀⠀⢀⠀⠀⠀⠀
+        <div class="ascii-container">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡀⢀⠀⢀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⢧⢳⣾⣂⣾⡁⣴⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠓⣬⠾⠋⠉⢸⣷⣋⣤⡦
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢯⡞⠃⠀⠀⠀⡼⠊⣠⡏⠀
@@ -109,8 +105,7 @@
 ⠀⣾⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⢸⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠈⢧⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-        </div>
+⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</div>
     </div>
 </body>
 </html>
